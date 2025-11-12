@@ -20,10 +20,11 @@ for i in range(len(supplies)):
 best_solution = dynamique[len(supplies)][remaining_capacity]
 final_items = best_solution[0] + mandatory[0]
 living_points = (best_solution[1] + mandatory[2]) * 2 - total_value
-table = [[] for i in range(3 * 3)]
-for i in range(3 * 3):
+table = [[] for i in range(pack_size)]
+for i in range(pack_size):
     table[i].append(final_items[i])
 print(f'Текущий счёт: {living_points + base_points}')
 print(f'Инвентарь:')
-for r in range(0, 9, 3):
+for r in range(0, pack_size, 3):
     print(*[table[i + r] for i in range(3)])
+
